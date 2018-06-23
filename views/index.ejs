@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheets/style.css">
+<script src='javascripts/Chart.js'></script>
+<script src='javascripts/init.js'></script>
+<script src='javascripts/fun1.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+    <%- include nav.ejs %>
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- 發電長條圖 -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1280px" id="band">
+    <h2 class="w3-wide">各種類發電量</h2>
+ 
+ <canvas id="myChart"></canvas>
+  </div>
+
+</div>
+
+
+
+<div class="w3-content" style="background: #f4f4f4; max-width:2000px;margin-top:46px">
+
+<!-- Page content -->
+
+    <!-- 發電長條圖 -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1280px" id="band">
+      <div class="box">
+
+          <h2 class="w3-wide">民營發電比例</h2>
+   
+          <canvas id="myChart1"></canvas>
+      </div>
+      
+      <div class="box">
+
+          <h2 class="w3-wide">再生能源比例</h2>
+   
+          <canvas id="myChart2"></canvas>
+      </div>
+    
+    </div>
+  
+ 
+  
+  <!-- End Page Content -->
+  
+  </div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+</footer>
+
+
+
+
+</body>
+</html>
