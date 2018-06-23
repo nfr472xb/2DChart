@@ -96,25 +96,45 @@ function getOption()
 
   // 圖表
 
-  var ctx = document.getElementById("myChart").getContext('2d');
-  var myChart = new Chart(ctx, {
-  type: 'pie',
-  data: {
-  labels: ['住宅部門','服務業','機關','農林漁牧'],
-  datasets: [{
-    backgroundColor: [
-      "#2ecc71",
-      "#3498db",
-      "#95a5a6",
-      "#9b59b6",
-      "#f1c40f",
-      "#e74c3c",
-      "#34495e"
-    ],
-    data: all
-  }]
-  }
-  });
+  new Chart(document.getElementById("radar-chart"), {
+    type: 'radar',
+    data: {
+      labels: ['住宅部門','服務業','機關','農林漁牧'],
+      datasets: [
+        {
+          label: "取值",
+          fill: true,
+          backgroundColor: "rgba(179,181,198,0.2)",
+          borderColor: "rgba(179,181,198,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(179,181,198,1)",
+          data: all
+        }, {
+          label: "平均",
+          fill: true,
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          data: [0.4993,0.3954,0.072,0.0334]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Distribution in % of world population'
+      }
+    }
+});
+
+
+ 
+  
+  
+
+
 
   
 console.log(all)
