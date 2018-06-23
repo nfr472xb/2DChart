@@ -1385,7 +1385,11 @@ path {
 	text-align: center;
   } 
   
-  
+.chart_box{
+
+	max-width: 800px;;
+	max-height: 800px;;
+}
   
 
 @media (max-width:800px) {

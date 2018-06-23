@@ -6,7 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var Router = require('./routes/taiwan');
+var taiwanRouter = require('./routes/taiwan');
+var prepareRouter = require('./routes/prepare');
+
+
+
 
 var app = express();
 
@@ -26,8 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/taiwan', Router);
-
+app.use('/taiwan', taiwanRouter);
+app.use('/prepare', prepareRouter);
 
 
 // 抓取電力資料
@@ -42,6 +46,19 @@ function scheduleCronstyle(){
     }).catch(function(error) {
       console.log("這不行了");
   });  
+
+  fetch('https://quality.data.gov.tw/dq_download_json.php?nid=25850&md5_url=8f9c784aae351f5834df4d9657df612b')
+  .then(res => {
+      const dest = fs.createWriteStream('./public/data/prepare.json');
+      res.body.pipe(dest);
+      console.log('檔案更新' + new Date());
+  }).catch(function(error) {
+    console.log("這不行了");
+});  
+
+
+
+
   });   
 }
 scheduleCronstyle();
