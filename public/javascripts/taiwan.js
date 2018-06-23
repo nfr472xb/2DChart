@@ -51,3 +51,78 @@ $(document).ready(function() {
   });
   
 
+
+
+var xhr = new XMLHttpRequest();
+xhr.open('get',"../data/category.json",true);
+
+
+xhr.send();
+console.log(xhr.responseText);
+
+var data ;
+
+xhr.onload = function(){
+
+data = JSON.parse(xhr.responseText);
+console.log(data)
+
+}
+
+
+function getOption()
+  {
+  var x=document.getElementById("mySelect")
+  console.log(x.options[x.selectedIndex].text)
+  
+  var name  ;
+  // 取得select值存入 name ex台中市
+    
+    name = (x.options[x.selectedIndex].text);
+    
+  var all = new Array();
+  for(var i =0;data.length>i;i++){
+            if(data[i].des == name)
+            {
+              for(a=0;a<4;a++)
+              {
+               
+                all.push(data[i].data[a])
+              }
+              
+            }
+  }
+  
+
+  // 圖表
+
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+  labels: ['住宅部門','服務業','機關','農林漁牧'],
+  datasets: [{
+    backgroundColor: [
+      "#2ecc71",
+      "#3498db",
+      "#95a5a6",
+      "#9b59b6",
+      "#f1c40f",
+      "#e74c3c",
+      "#34495e"
+    ],
+    data: all
+  }]
+  }
+  });
+
+  
+console.log(all)
+
+  }
+
+
+
+
+
+
