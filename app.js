@@ -29,6 +29,7 @@ app.use('/users', usersRouter);
 app.use('/taiwan', Router);
 
 
+
 // 抓取電力資料
 
 function scheduleCronstyle(){
@@ -63,6 +64,12 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(8080);
+
+var port = Number(process.env.PORT || 5000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
 
 module.exports = app;
+
+
