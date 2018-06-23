@@ -44,6 +44,7 @@ xhr.onload = function(){
   }
   //console.log(str)
   var ctx = document.getElementById("myChart1").getContext('2d');
+  ctx.height = 300;
 var myChart1 = new Chart(ctx, {
   type: 'line',
   data: {
@@ -53,7 +54,14 @@ var myChart1 = new Chart(ctx, {
       borderColor:["#f1c40f"],
       data: str2
     }]
-  }
+  },
+  options:{
+    responsive: true,
+    maintainAspectRatio: false,
+    legend:{
+      display:false
+    }
+    }
 });
   var ctx2 = document.getElementById("myChart2").getContext('2d');
 var myChart2 = new Chart(ctx2, {
@@ -64,7 +72,14 @@ var myChart2 = new Chart(ctx2, {
       borderColor:["#f1c40f"],
       data: str3
     }]
-  }
+  },
+  options:{
+    responsive: true,
+    maintainAspectRatio: false,
+    legend:{
+      display:false
+    }
+    }
   
 });
 };
