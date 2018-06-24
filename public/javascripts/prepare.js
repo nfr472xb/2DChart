@@ -1,16 +1,14 @@
 var xhr = new XMLHttpRequest();
 xhr.open('get',"./data/prepare.json",true);
-  
+
 
 xhr.send();
-
-
 
 function getDate() {
   var data = JSON.parse(xhr.responseText);
   var d = ''
   var i=0
-  d = document.getElementById('date').value;
+  d = document.getElementById('datepicker').value;
   d = d.replace(/-/g, "/");
   var str = ''
     for(i;i<data.length;i++) {
@@ -19,7 +17,8 @@ function getDate() {
         str+= '<h2>備轉容量率(%):'+data[i]['備轉容量率(%)']+'</h2>';
       }
     }
-  document.querySelector('.list').innerHTML = str;
+  document.querySelector('.list1').innerHTML = str;
+  console.log(data.length)
 }
 
 xhr.onload = function(){
@@ -32,6 +31,16 @@ xhr.onload = function(){
   var k = i-30;
   var g = i-30;
   var h = i-30;
+  
+  var datepicker = document.getElementById('datepicker');
+  var d1 = data[0]['日期'].replace(/\//g, "-");
+  datepicker.min = d1;
+  console.log(datepicker.min)
+  datepicker.placeholder = datepicker.min;
+  var d2 = data[i-1]['日期'].replace(/\//g, "-");
+  datepicker.max = d2;
+  console.log(d2)
+  
    for(var h;i>h;h+=7){
      //str = '<li>'+ data[k].日期 +'</li>';
      str.push(data[h]['日期']);
@@ -44,7 +53,6 @@ xhr.onload = function(){
   }
   //console.log(str)
   var ctx = document.getElementById("myChart1").getContext('2d');
-  ctx.height = 300;
 var myChart1 = new Chart(ctx, {
   type: 'line',
   data: {
@@ -80,9 +88,14 @@ var myChart2 = new Chart(ctx2, {
       display:false
     }
     }
-  
 });
 };
+
+
+
+
+
+
 
 
 

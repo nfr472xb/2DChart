@@ -1398,6 +1398,7 @@ path {
 .radar_box{
 	margin-bottom: 100px;
 	width: 750px;
+	height: auto;
 	margin: 0 auto;
 }
 

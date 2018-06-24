@@ -93,7 +93,7 @@ function getOption()
               
             }
   }
-str = "<canvas id='radar-chart' width='800' height='600' style=' width: 100%; '></canvas>";
+str = "<canvas id='radar-chart' width='800' height='700' style=' width: 100%; '></canvas>";
 
   document.querySelector('.radar_box').innerHTML = str;
 
@@ -132,7 +132,12 @@ str = "<canvas id='radar-chart' width='800' height='600' style=' width: 100%; '>
       title: {
         display: true,
         text: '百分比'
+      },
+      scale: {
+        pointLabels: {
+          fontSize: 20
       }
+    }
     }
 });
 
