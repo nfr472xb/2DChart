@@ -35,16 +35,12 @@
 
   <!-- End Page Content -->
 
-  <div class="w3-content taiwan">
-	<h2 class="w3-wide">行業用電率</h2>
-
-	<div class="container">
-		<h2>各類型用電比</h2>
-	  
-		<div class="po"> </div>
-	  <select id="mySelect" >
+  <div class="w3-content search_box"  >
+	<h2 class="w3-wide">各縣市用電類別</h2>
+	<div style="display:inline-block"> 
+	<div class="select"> 
+		<select name="slct" id="slct">
 		<option value="新北市">新北市</option>
-		<option value="台北市">台北市</option>
 		<option value="桃園市">桃園市</option>
 		<option value="台中市">台中市</option>
 		<option value="台南市">台南市</option>
@@ -65,12 +61,13 @@
 		<option value="澎湖縣">澎湖縣</option>
 		<option value="金門縣">金門縣</option>
 		<option value="連江縣">連江縣</option>
-	  </select>
-	  <input type="button" onclick="getOption()" value="按了才有">
-	  </div>
-			  
-	  <canvas id="radar-chart" width="800" height="600"></canvas>
+	  </select>  
+	  </div>	
+	  <input  id="search_type"type="button" onclick="getOption()" value="Search">  
 	</div>
+	<div class="radar_box"></div>
+</div>
+</div>
 
 
   

@@ -68,11 +68,12 @@ data = JSON.parse(xhr.responseText);
 console.log(data)
 
 }
-
-
+var str ='';
+  
+  
 function getOption()
   {
-  var x=document.getElementById("mySelect")
+  var x=document.getElementById("slct")
   console.log(x.options[x.selectedIndex].text)
   
   var name  ;
@@ -92,7 +93,11 @@ function getOption()
               
             }
   }
-  
+str = "<canvas id='radar-chart' width='800' height='600' style=' width: 100%; '></canvas>";
+
+  document.querySelector('.radar_box').innerHTML = str;
+
+	
 
   // 圖表
 
@@ -102,47 +107,34 @@ function getOption()
       labels: ['住宅部門','服務業','機關','農林漁牧'],
       datasets: [
         {
-          label: "取值",
-          fill: true,
-          backgroundColor: "rgba(179,181,198,0.2)",
-          borderColor: "rgba(179,181,198,1)",
-          pointBorderColor: "#fff",
-          pointBackgroundColor: "rgba(179,181,198,1)",
-          data: all
-        }, {
-          label: "平均",
+          label: name,
           fill: true,
           backgroundColor: "rgba(255,99,132,0.2)",
           borderColor: "rgba(255,99,132,1)",
           pointBorderColor: "#fff",
           pointBackgroundColor: "rgba(255,99,132,1)",
           pointBorderColor: "#fff",
+          data: all
+        }, {
+          label: "全國平均",
+          fill: true,
+          backgroundColor: "rgba(179,181,198,0.2)",
+          borderColor: "rgba(179,181,198,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(179,181,198,1)",
           data: [0.4993,0.3954,0.072,0.0334]
         }
       ]
     },
-    options: {
+    options: { 
+      responsive: true,
+      maintainAspectRatio: false,
       title: {
         display: true,
-        text: 'Distribution in % of world population'
+        text: '百分比'
       }
     }
 });
 
-
- 
-  
-  
-
-
-
-  
-console.log(all)
-
   }
-
-
-
-
-
 
