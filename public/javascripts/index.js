@@ -104,16 +104,23 @@ labels: addname,
 datasets: [{
   backgroundColor: [
     "#2ecc71",
+    "#f97c98",
     "#3498db",
     "#95a5a6",
     "#9b59b6",
     "#f1c40f",
     "#e74c3c",
-    "#34495e"
+    "#34495e",
+    "#7cd9f9"
   ],
   data: addpower
 }]
-}
+},
+options:{
+  legend:{
+    display:false
+  }
+  }
 });
 }
 else {
@@ -126,16 +133,23 @@ labels: addname,
 datasets: [{
   backgroundColor: [
     "#2ecc71",
+    "#f97c98",
     "#3498db",
     "#95a5a6",
     "#9b59b6",
     "#f1c40f",
     "#e74c3c",
-    "#34495e"
+    "#34495e",
+    "#7cd9f9"
   ],
   data: addpower
 }]
-}
+},
+options:{
+  legend:{
+    display:false
+  }
+  }
 });
 }
 
@@ -148,13 +162,8 @@ data: {
 labels: ["民營","政府"],
 datasets: [{
   backgroundColor: [
-    "#2ecc71",
-    "#3498db",
-    "#95a5a6",
-    "#9b59b6",
-    "#f1c40f",
-    "#e74c3c",
-    "#34495e"
+    "#7cd9f9",
+    "#3498db"
   ],
   data: ipp
  
@@ -171,13 +180,8 @@ data: {
 labels: ["不可再生","可再生"],
 datasets: [{
   backgroundColor: [
-    "#2ecc71",
-    "#3498db",
-    "#95a5a6",
-    "#9b59b6",
-    "#f1c40f",
-    "#e74c3c",
-    "#34495e"
+    "#f97c98",
+    "#A5D576"
   ],
   data: clear
  

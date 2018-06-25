@@ -17,7 +17,20 @@
 
   <!-- 發電長條圖 -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1280px" id="band">
-    
+     <!-- 查詢 -->
+   <div class="prepare_search">
+      <h2 class="w3-wide">搜尋當日資料</h2>
+    <input type="date" id="datepicker">
+    <input id="search_type" type="submit" onclick="getDate()">
+   </div>
+   <ul class="list1"></ul>
+  </div>
+
+   
+  </div>
+
+  </div>
+  <div class="w3-container w3-center w3-padding-64" style="background: #f4f4f4; width: 100%;" id="band">
     <h2 class="w3-wide">備轉容量(萬瓩)</h2>
     <div class="chart_box">
       <canvas id="myChart1" ></canvas>
@@ -26,36 +39,10 @@
     <h2 class="w3-wide">備轉率(百分比)</h2>
     <div class="chart_box">
     <canvas id="myChart2" ></canvas>
+
+
   </div>
 
-  </div>
-  <div class="w3-container w3-center w3-padding-64" style="background: #f4f4f4; width: 100%;" id="band">
-  
-   <!-- 查詢 -->
-  <input type="date" id="datepicker">
-  <input type="submit" onclick="getDate()">
-
-<ul class="list1"></ul>
-</div>
-
-
-
-
-
-
-
-<!-- Page content -->
-
-
-  
-  <!-- End Page Content -->
-  
-  </div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-
-</footer>
 
 
 

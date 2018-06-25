@@ -51,6 +51,8 @@ xhr.onload = function(){
   for(var g;i>g;g++){
     str3.push(data[g]['備轉容量率(%)']);
   }
+
+  console.log(str2)
   //console.log(str)
   var ctx = document.getElementById("myChart1").getContext('2d');
 var myChart1 = new Chart(ctx, {
@@ -61,6 +63,7 @@ var myChart1 = new Chart(ctx, {
 
       borderColor:["#f1c40f"],
       data: str2
+     
     }]
   },
   options:{
