@@ -23,9 +23,7 @@
         var nx=re.split("<b>");
           var pin = nx[1].split("<")
           name.push(pin[0]);
-          
-          str+= '<li>'+ data.aaData[i][0] 
-            +'</li>淨發電量(千瓩):'+n;
+
           
         }        
     }
@@ -120,6 +118,23 @@ options:{
   legend:{
     display:false
   }
+  ,
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: '淨發電量(千瓩)'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: '發電類別'
+        }
+      }]
+    }
   }
 });
 }
@@ -148,6 +163,22 @@ datasets: [{
 options:{
   legend:{
     display:false
+  }  ,
+  scales: {
+    xAxes: [{
+      display: true,
+      scaleLabel: {
+        display: true,
+        labelString: '發電類別'
+      }
+    }],
+    yAxes: [{
+      display: true,
+      scaleLabel: {
+        display: true,
+        labelString: '淨發電量(千瓩)'
+      }
+    }]
   }
   }
 });
@@ -166,9 +197,9 @@ datasets: [{
     "#3498db"
   ],
   data: ipp
- 
 }]
 }
+
 
 });
 

@@ -101,6 +101,8 @@ str = "<canvas id='radar-chart' width='800' height='700' style=' width: 100%; '>
 
   // 圖表
 
+
+
   new Chart(document.getElementById("radar-chart"), {
     type: 'radar',
     data: {

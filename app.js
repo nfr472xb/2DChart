@@ -42,18 +42,18 @@ function scheduleCronstyle(){
     .then(res => {
         const dest = fs.createWriteStream('./public/data/10min.json');
         res.body.pipe(dest);
-        console.log('檔案更新' + new Date());
+        console.log('發電狀況更新' + new Date());
     }).catch(function(error) {
-      console.log("這不行了");
+      console.log("Error無法更新");
   });  
 
   fetch('https://quality.data.gov.tw/dq_download_json.php?nid=25850&md5_url=8f9c784aae351f5834df4d9657df612b')
   .then(res => {
       const dest = fs.createWriteStream('./public/data/prepare.json');
       res.body.pipe(dest);
-      console.log('檔案更新' + new Date());
+      console.log('備轉容量更新' + new Date());
   }).catch(function(error) {
-    console.log("這不行了");
+    console.log("Error無法更新");
 });  
 
 

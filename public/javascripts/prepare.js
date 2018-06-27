@@ -28,9 +28,9 @@ xhr.onload = function(){
   
   var data = JSON.parse(xhr.responseText);
   var i = data.length;
-  var k = i-30;
-  var g = i-30;
-  var h = i-30;
+  var k = i-29;
+  var g = i-29;
+  var h = i-29;
   
   var datepicker = document.getElementById('datepicker');
   var d1 = data[0]['日期'].replace(/\//g, "-");
@@ -45,15 +45,19 @@ xhr.onload = function(){
      //str = '<li>'+ data[k].日期 +'</li>';
      str.push(data[h]['日期']);
    }
-  for(var k;i>k;k++){
+  for(var k;i>k;k+=7){
     str2.push(data[k]['備轉容量(萬瓩)']);
   }
-  for(var g;i>g;g++){
+  for(var g;i>g;g+=7){
     str3.push(data[g]['備轉容量率(%)']);
   }
 
-  console.log(str2)
   //console.log(str)
+  
+
+  console.log(str)
+  console.log(str2)
+
   var ctx = document.getElementById("myChart1").getContext('2d');
 var myChart1 = new Chart(ctx, {
   type: 'line',
@@ -71,6 +75,22 @@ var myChart1 = new Chart(ctx, {
     maintainAspectRatio: false,
     legend:{
       display:false
+    },
+    scales: {
+      xAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: '日期'
+        }
+      }],
+      yAxes: [{
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: '備轉容量(萬瓩)'
+        }
+      }]
     }
     }
 });
@@ -90,6 +110,23 @@ var myChart2 = new Chart(ctx2, {
     legend:{
       display:false
     }
+    ,
+				scales: {
+					xAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: '日期'
+						}
+					}],
+					yAxes: [{
+						display: true,
+						scaleLabel: {
+							display: true,
+							labelString: '備轉容量率'
+						}
+					}]
+				}
     }
 });
 };
